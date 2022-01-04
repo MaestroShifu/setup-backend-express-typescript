@@ -1,0 +1,47 @@
+{
+  "name": "setup-backend-express-typescript",
+  "version": "1.0.0",
+  "description": "Un template basico para el inicio de un backend con node.js",
+  "main": "./build/index.js",
+  "scripts": {
+    "start": "node ./build/index.js",
+    "dev": "nodemon",
+    "build": "tsc",
+    "prettier:write": "prettier ./src --write",
+    "prettier:check": "prettier ./src --check",
+    "eslint:fix": "eslint ./src --ext .ts --fix",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "./src/**/*": ["npm run prettier:write", "npm run eslint:fix"]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaestroShifu/setup-backend-express-typescript.git"
+  },
+  "keywords": [
+    "typescript",
+    "javascript",
+    "expressjs",
+    "express"
+  ],
+  "author": "MaestroShifu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MaestroShifu/setup-backend-express-typescript/issues"
+  },
+  "homepage": "https://github.com/MaestroShifu/setup-backend-express-typescript#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.9.0",
+    "@typescript-eslint/parser": "^5.9.0",
+    "eslint": "^8.6.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.1.5",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.5.1",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.5.4"
+  }
+}
