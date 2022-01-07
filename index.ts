@@ -1,1 +1,1 @@
-console.log('Hola mundo');
+import './src/infraestructure/server/server';
