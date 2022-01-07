@@ -20,8 +20,4 @@ app.get('/', (_req: Request, res: Response) => {
   res.status(HttpStatusCode.OK).send();
 });
 
-app.listen(3000, () => {
-  console.log('Funciona!!');
-});
-
 export default app;
