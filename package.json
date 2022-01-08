@@ -6,8 +6,8 @@
   "scripts": {
     "start": "DEBUG=Server:* node ./build/index.js",
     "dev": "DEBUG=Server:* nodemon",
-    "test": "jest --detectOpenHandles --findRelatedTests",
-    "coverage": "jest --detectOpenHandles --findRelatedTests --coverage",
+    "test": "jest --detectOpenHandles",
+    "coverage": "jest --detectOpenHandles --coverage",
     "build": "tsc",
     "prettier:write": "prettier ./src --write",
     "prettier:check": "prettier ./src --check",
@@ -20,7 +20,7 @@
       "npm run eslint:fix"
     ],
     "**/*.{ts}": [
-      "npm run test"
+      "npm run test --findRelatedTests"
     ]
   },
   "repository": {
