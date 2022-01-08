@@ -19,7 +19,7 @@
       "npm run prettier:write",
       "npm run eslint:fix"
     ],
-    "**/*.{ts}": [
+    "**/*.ts": [
       "npm run test --findRelatedTests"
     ]
   },
