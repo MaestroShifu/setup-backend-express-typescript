@@ -19,8 +19,8 @@
       "npm run prettier:write",
       "npm run eslint:fix"
     ],
-    "**/*.ts": [
-      "npm run test --findRelatedTests"
+    "*": [
+      "jest --detectOpenHandles --findRelatedTests"
     ]
   },
   "repository": {
