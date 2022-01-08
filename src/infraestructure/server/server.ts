@@ -1,4 +1,4 @@
-import { HttpStatusCode } from '../../constant/status-code';
+import { HttpStatusCode } from '../../utils/status-code';
 import express, { urlencoded, json, Request, Response } from 'express';
 import helmet from 'helmet';
 import compression from 'compression';
