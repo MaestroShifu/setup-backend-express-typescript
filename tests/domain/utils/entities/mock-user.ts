@@ -7,7 +7,8 @@ const getMockUser = (user: Partial<User>) => {
     name: 'User test',
     lastName: 'User test',
     phone: '1234567',
-    language: 'es'
+    language: 'es',
+    password: 'prueba_prueba'
   };
   return { ...userMock, ...user };
 };

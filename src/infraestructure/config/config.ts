@@ -6,6 +6,7 @@ type VariablesEnv = 'dev' | 'prod' | 'test';
 type Enviroment = {
   ENV_NODE: VariablesEnv;
   PORT: number;
+  SECRET_KEY: string;
 };
 
 const urlPath = '../../../.env';
@@ -19,10 +20,12 @@ const ENV_NODE: VariablesEnv = process.env.ENV_NODE
   ? (process.env.ENV_NODE as VariablesEnv)
   : 'dev';
 const PORT: number = process.env.PORT ? +process.env.PORT : 3000;
+const SECRET_KEY: string = process.env.SECRET_KEY || '';
 
 const env: Enviroment = {
   ENV_NODE,
-  PORT
+  PORT,
+  SECRET_KEY
 };
 
 export default env;

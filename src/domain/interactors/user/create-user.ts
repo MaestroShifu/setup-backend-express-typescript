@@ -1,18 +1,19 @@
 import { UserContract } from '../../contracts/user-contracts';
+import { AuthContract } from '../../contracts/auth-contracts';
 import { User } from '../../entities/user';
 
 const createUser =
-  (userContract: UserContract) =>
+  (userContract: UserContract, authContract: AuthContract) =>
   async (user: User): Promise<User> => {
-    // Buscar por email
-    // Validar que no exista el email
+    // Buscar por email / Validar que no exista el email
     const validUser = await userContract.findByEmail(user.email);
     if (!validUser) {
       throw new Error('The email is already registered');
     }
-    // Cifrar password -- TODO
+    // Cifrar password
+    const password = authContract.passwordEncrypt(user.password);
     // Crear el nuevo usuario
-    const newUser = await userContract.create(user);
+    const newUser = await userContract.create({ ...user, password });
     // Retornarlo
     return newUser;
   };
