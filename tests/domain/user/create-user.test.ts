@@ -5,7 +5,7 @@ import getMockUser from '../utils/entities/mock-user';
 
 const mockUser = getMockUser({ email: 'test@test.com' });
 const mockUserContract = new MockUserContract(mockUser);
-const mockAuthContract = new MockAuthContract();
+const mockAuthContract = new MockAuthContract(mockUser);
 
 describe('Create User', () => {
   it('The email is already registered', (done) => {

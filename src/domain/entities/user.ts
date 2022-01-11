@@ -8,10 +8,4 @@ export type User = {
   language: 'es' | 'en';
 };
 
-export type PayloadToken = {
-  sub: string;
-  iss: string; // User name - email - name or lastname
-  iat: number; // Timestamp create token
-};
-
 export type LoginAuth = Omit<User, 'password'> & { token: string };

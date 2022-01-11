@@ -3,7 +3,7 @@ import MockAuthContract from '../utils/contracts/mock-auth-contract';
 import getMockUser from '../utils/entities/mock-user';
 
 const mockUser = getMockUser({ email: 'test@test.com' });
-const mockAuthContract = new MockAuthContract();
+const mockAuthContract = new MockAuthContract(mockUser);
 
 describe('Login Auth', () => {
   it('Generate new token', (done) => {
