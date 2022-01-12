@@ -7,7 +7,7 @@ const createUser =
   async (user: Omit<User, '_id'>): Promise<User> => {
     // Buscar por email / Validar que no exista el email
     const validUser = await userContract.findByEmail(user.email);
-    if (!validUser) {
+    if (validUser) {
       throw new Error('The email is already registered');
     }
     // Cifrar password

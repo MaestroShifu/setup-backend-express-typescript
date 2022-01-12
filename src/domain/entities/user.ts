@@ -7,5 +7,3 @@ export type User = {
   password: string;
   language: 'es' | 'en';
 };
-
-export type LoginAuth = Omit<User, 'password'> & { token: string };
