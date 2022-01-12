@@ -4,7 +4,7 @@ import { User } from '../../entities/user';
 
 const createUser =
   (userContract: UserContract, authContract: AuthContract) =>
-  async (user: User): Promise<User> => {
+  async (user: Omit<User, '_id'>): Promise<User> => {
     // Buscar por email / Validar que no exista el email
     const validUser = await userContract.findByEmail(user.email);
     if (!validUser) {

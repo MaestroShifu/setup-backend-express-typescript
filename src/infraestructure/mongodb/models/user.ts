@@ -1,12 +1,39 @@
-import { Schema } from 'mongoose';
+import mongoose, { Schema } from 'mongoose';
+import { User } from '../../../domain/entities/user';
 
 const userSchema = new Schema({
-  id: String,
-  email: String,
-  name: String,
-  lastName: String,
-  phone: String
-  // language: 'es' | 'en';
+  password: {
+    type: Schema.Types.String,
+    required: true
+  },
+  email: {
+    type: Schema.Types.String,
+    required: true,
+    lowercase: true,
+    index: true,
+    unique: true
+  },
+  name: {
+    type: Schema.Types.String,
+    required: true,
+    lowercase: true
+  },
+  lastName: {
+    type: Schema.Types.String,
+    required: true,
+    lowercase: true
+  },
+  phone: {
+    type: Schema.Types.String,
+    required: true
+  },
+  language: {
+    type: Schema.Types.String,
+    enum: ['es', 'en'],
+    default: 'es'
+  }
 });
 
-export default userSchema;
+const userModel = mongoose.model<User>('User', userSchema);
+
+export default userModel;

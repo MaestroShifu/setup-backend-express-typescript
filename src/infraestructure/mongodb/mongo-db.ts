@@ -1,4 +1,4 @@
-import mongoose, { Schema } from 'mongoose';
+import mongoose from 'mongoose';
 import logger from '../logger/logger';
 import env from '../config/config';
 
@@ -38,15 +38,6 @@ class MongoDb {
       log('Error closing the connection: [%j]', error);
       throw new Error('Error closing the connection');
     }
-  }
-
-  public async addModel<K = unknown>(
-    name: string,
-    schema?: Schema,
-    collection?: string,
-    skipInit?: boolean
-  ) {
-    return this.validConnection().model<K>(name, schema, collection, skipInit);
   }
 }
 

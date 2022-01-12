@@ -2,7 +2,7 @@ import { User } from '../../../../src/domain/entities/user';
 
 const getMockUser = (user: Partial<User>) => {
   const userMock: User = {
-    id: 'asdasd',
+    _id: 'asdasd',
     email: 'test@test.com',
     name: 'User test',
     lastName: 'User test',

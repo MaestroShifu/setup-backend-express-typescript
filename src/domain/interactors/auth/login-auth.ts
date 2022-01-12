@@ -6,7 +6,7 @@ const loginAuth =
   async (user: Omit<User, 'password'>): Promise<LoginAuth> => {
     // Crear token JWT
     const token = authContract.tokenGenerate({
-      sub: user.id,
+      sub: user._id,
       iss: `${user.name} ${user.lastName}`,
       iat: new Date().getTime()
     });

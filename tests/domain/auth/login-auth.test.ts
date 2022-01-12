@@ -9,7 +9,7 @@ describe('Login Auth', () => {
   it('Generate new token', (done) => {
     const useCase = loginAuth(mockAuthContract);
     useCase(mockUser).then((res) => {
-      expect(res.id).toEqual(res.id);
+      expect(res._id).toEqual(mockUser._id);
       expect(res).toHaveProperty('token');
       done();
     });
