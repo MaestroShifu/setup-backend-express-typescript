@@ -4,6 +4,7 @@ import compression from 'compression';
 import cors from 'cors';
 import { HttpStatusCode } from '../../utils/status-code';
 import userRoutes from '../../interface/routes/user-routes';
+import middlewareError from './middleware/middleware-error';
 
 const app = express();
 
@@ -21,5 +22,7 @@ app.get('/', (_req: Request, res: Response) => {
   res.status(HttpStatusCode.OK).send();
 });
 app.use(userRoutes);
+
+app.use(middlewareError);
 
 export default app;
